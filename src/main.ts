@@ -1,11 +1,14 @@
 import { NestFactory } from '@nestjs/core';
 import { AppModule } from './app.module';
 import { Logger } from '@nestjs/common';
+import * as config from 'config';
 
 async function bootstrap() {
-  const port = process.env.NODE_ENV || 3333;
+  const serverConfig = config.get('server');
   const logger = new Logger('Main');
   const app = await NestFactory.create(AppModule);
+
+  const port = process.env.PORT || serverConfig.port;
 
   app.setGlobalPrefix('api');
   await app.listen(port);
