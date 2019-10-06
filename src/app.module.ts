@@ -6,13 +6,6 @@ import { AuthModule } from './auth/auth.module';
 import * as path from 'path';
 
 @Module({
-  imports: [
-    TypeOrmModule.forRoot({
-      ...typeOrmConfig,
-      entities: [path.join(__dirname, '**/*.entity{.ts,.js}')],
-    }),
-    TasksModule,
-    AuthModule,
-  ],
+  imports: [TypeOrmModule.forRoot({ ...typeOrmConfig }), TasksModule, AuthModule],
 })
 export class AppModule {}
