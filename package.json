@@ -27,7 +27,7 @@
     "@nestjs/typeorm": "^6.2.0",
     "@types/express": "^4.17.1",
     "@types/node": "^12.7.5",
-    "bcrypt": "^3.0.6",
+    "bcrypt": "^5.0.0",
     "class-transformer": "^0.2.3",
     "class-validator": "^0.10.1",
     "config": "^3.2.3",
